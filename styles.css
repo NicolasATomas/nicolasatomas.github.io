@@ -196,7 +196,7 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('images/knoneewallpaper.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)), url('images/knoneewallpaper.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 0.01%;
