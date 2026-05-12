@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"> 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="styles.css">
-        <title>D&#205ADOS</title>
-    </head> 
-    <body>     
-        <div class="container-1">
-            <div class="fade-in-1">
-            <img src="images/logo.png" alt="Logo Image">
-                </div>
-        </div>
-        
-        <div class="container-2">
-            <div class="fade-in-2">
-                <h2>GET IN EARLY:</h2>
-            </div>
-            <form name="submit-to-google-sheet">
-                <div class="row">
-                    <div class="column">
-                        <div class="fade-in-3">
-                            <input type="email" name="Email" placeholder="Email" required>
-                            <button type="submit">SUBSCRIBE</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <span id="msg"></span>
-                <div class="social-media">
-                    <div class="fade-in-4">
-                       <a href="https://open.spotify.com/user/31f6vbpzrl2knl2jtgaxg2ax7jge?si=50f9e2c901ac4b00"><img src="images/spotify.png" alt="Spotify Logo" style="width: 25px;"></a>
-                       <a href="https://www.instagram.com/diadosofficial?igsh=cmI4c2F3dWh2enMz&utm_source=qr"><img src="images/instagram.png" alt="Instagram Logo" style="width: 25px;"></a>
-                       <a href="https://www.youtube.com/@diadosofficial"><img src="images/youtube.png" alt="YouTube Logo" style="width: 25px;"></a>
-                    </div>
-                </div>
-        </div>
-        
-        
-        <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxLh0zMdUelroZrKlZSrzPZw34hun7NpVPVSgt5Hc5ylVEteS8tq5s7C1JZ733QxRncaQ/exec'
-            const form = document.forms['submit-to-google-sheet']
-            const msg = document.getElementById("msg")
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIADOS</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
 
-            form.addEventListener('submit', e => {
-                e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => {
-                    msg.innerHTML = "ALL SET, WE'LL KEEP YOU POSTED"
-                    setTimeout(function(){
-                        msg.innerHTML = ""
-                    },10000)
-                    form.reset()
-                })
-                    .catch(error => console.error('Error!', error.message))
-            })
-        </script>
-    </body>
+  <body>
+
+    <!-- BACKGROUND -->
+    <div class="bg-overlay"></div>
+
+    <!-- LOGO -->
+    <div class="container-1">
+      <img src="images/logo.png" alt="DIADOS Logo" class="logo">
+    </div>
+
+    <!-- FORM -->
+    <div class="container-2">
+
+      <h2>GET IN EARLY:</h2>
+
+      <form name="submit-to-google-sheet">
+        <div class="row">
+          <div class="column">
+
+            <input
+              type="tel"
+              name="Phone"
+              placeholder="Mobile Number"
+              required
+            >
+
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email (Optional)"
+            >
+
+            <button type="submit">SUBMIT</button>
+
+          </div>
+        </div>
+      </form>
+
+    <span id="msg" class="pop-up"></span>
+    <div class="social-media">
+        <div class="fade-in">
+            <a href="https://open.spotify.com/user/31f6vbpzrl2knl2jtgaxg2ax7jge?si=50f9e2c901ac4b00"><img src="images/spotify.png" alt="Spotify Logo" style="width: 25px;"></a>
+            <a href="https://www.instagram.com/diadosofficial?igsh=cmI4c2F3dWh2enMz&utm_source=qr"><img src="images/instagram.png" alt="Instagram Logo" style="width: 25px;"></a>
+            <a href="https://www.youtube.com/@diadosofficial"><img src="images/youtube.png" alt="YouTube Logo" style="width: 25px;"></a>
+        </div>
+    </div>
+</div>
+   
+
+    <script src="script.js"></script>
+
+  </body>
 </html>
